@@ -1,0 +1,11 @@
+
+Š"squid:ClassVariableVisibilityCheck"WMake stateNumber a static final constant or non-public and provide accessors if needed.(™‡•™8†®ì·€,
+psquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸¡íÅÿÿÿÿÿ8†®ì·€,
+xsquid:S1188"\Reduce this anonymous class number of lines from 27 to at most 20, or make it a named class.(ìüøŸ8³Ä”ý‚,
+psquid:S00116"NRename this field "TAG" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–›îáýÿÿÿÿ8ñ¦†¸€,
+ksquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„°ÍÏ8†®ì·€,
+psquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ô²¦ªýÿÿÿÿ8†®ì·€,
+‡"squid:ClassVariableVisibilityCheck"UMake stateName a static final constant or non-public and provide accessors if needed.(—ÐÀ;8†®ì·€,
+Tsquid:S1213"8Move this variable to comply with Java Code Conventions.(ìüøŸ8†®ì·€,
+Ysquid:S1155">Use isEmpty() to check whether the collection is empty or not.(ö¼¤-8†®ì·€,
+Ysquid:S1213"8Move this variable to comply with Java Code Conventions.(®ìñÍùÿÿÿÿ8†®ì·€,

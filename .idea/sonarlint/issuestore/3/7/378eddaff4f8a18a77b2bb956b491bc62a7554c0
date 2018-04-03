@@ -1,0 +1,14 @@
+
+g
+squid:S128"LEnd this switch case with an unconditional break, return or throw statement.(ÇÍÿÄ8Øù¹·‰,
+Nsquid:S1172"2Remove this unused method parameter "newBusiness".(¸Ô ü8ÖÊ¿çˆ,
+Dsquid:S3398"(Move this method into "MVTBaseBusiness".(¸Ô ü8ºÕÂçˆ,
+tsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(Ç¬·ùúÿÿÿÿ8æÓ „,
+nsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(­«½J8Ø¶¸ğ†,
+U"squid:SwitchLastCaseIsDefaultCheck""Add a default case to this switch.(Æ¶¡Ñ8ßñ´·‰,
+Gsquid:S1452"&Remove usage of generic wildcard type.(ö¡İ¾ıÿÿÿÿ8Ø¶¸ğ†,
+¢squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.( ò¯”üÿÿÿÿ8¤¼Ûº€,
+Gsquid:S1452"&Remove usage of generic wildcard type.(ö¡İ¾ıÿÿÿÿ8íĞä „,
+dsquid:S1871"HThis case's code block is the same as the block for the case on line 62.(ï‹Õ¸8Øù¹·‰,
+l
+squid:S128"LEnd this switch case with an unconditional break, return or throw statement.(Ó‡êëûÿÿÿÿ8Øù¹·‰,
