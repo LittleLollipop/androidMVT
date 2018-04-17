@@ -99,7 +99,7 @@ public class MVTBusinessMachine extends StateMachine {
 
     }
 
-    private void startBusiness(MVTBaseBusiness newBusiness) {
+    public void startBusiness(MVTBaseBusiness newBusiness) {
 
         this.newBusiness = newBusiness;
         changeState(BUSINESS_CHANGING);
