@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.ActionMode;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
 
 import com.sai.frame.footstone.MVTApplication;
 
@@ -83,5 +85,34 @@ public abstract class PolymorphicActivity extends Activity {
         actor.onActionModeFinished(mode);
     }
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(actor.onKeyDown(keyCode, event))
+            return true;
+        else
+            return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    public boolean onKeyUp(int keyCode, KeyEvent event) {
+        if(actor.onKeyUp(this, keyCode, event))
+            return true;
+        else
+            return super.onKeyUp(keyCode, event);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+
+        if(actor.onTouchEvent(event))
+            return true;
+        else
+            return super.onTouchEvent(event);
+    }
+
     public abstract Object getActorKey();
+
+    public void dealBackBtnPressed(){
+
+    }
 }

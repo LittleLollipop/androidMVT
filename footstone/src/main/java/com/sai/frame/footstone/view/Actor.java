@@ -2,6 +2,8 @@ package com.sai.frame.footstone.view;
 
 import android.os.Bundle;
 import android.view.ActionMode;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
 
 /**
  * Created by sai on 17/12/1.
@@ -99,6 +101,39 @@ public abstract class Actor {
         executeCommand(command, info);
     }
 
+    public boolean onTouchEvent(MotionEvent event){
+        if (mActor != null){
+            boolean b = mActor.onTouchEvent(event);
+            if(b)
+                return b;
+            else
+                return executeTouchEvent(event);
+        }
+        return false;
+    }
+
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (mActor != null){
+            boolean b = mActor.executeKeyDown(keyCode, event);
+            if(b)
+                return b;
+            else
+                return executeKeyDown(keyCode, event);
+        }
+        return false;
+    }
+
+    public boolean onKeyUp(PolymorphicActivity activity, int keyCode, KeyEvent event) {
+        if (mActor != null){
+            boolean b = mActor.executeKeyUp(activity, keyCode, event);
+            if(b)
+                return b;
+            else
+                return executeKeyUp(activity, keyCode, event);
+        }
+        return false;
+    }
+
     public abstract void executeCreate(PolymorphicActivity polymorphicActivity);
 
     public abstract void executeStart(PolymorphicActivity polymorphicActivity);
@@ -122,4 +157,10 @@ public abstract class Actor {
     public abstract void executeActionModeStarted(ActionMode mode);
 
     public abstract void executeActionModeFinished(ActionMode mode);
+
+    public abstract boolean executeTouchEvent(MotionEvent event);
+
+    public abstract boolean executeKeyDown(int keyCode, KeyEvent event);
+
+    public abstract boolean executeKeyUp(PolymorphicActivity activity, int keyCode, KeyEvent event);
 }

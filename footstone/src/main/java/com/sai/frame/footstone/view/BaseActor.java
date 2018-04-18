@@ -3,6 +3,8 @@ package com.sai.frame.footstone.view;
 
 import android.os.Bundle;
 import android.view.ActionMode;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
 
 /**
  * Created by sai on 17/12/6.
@@ -72,5 +74,20 @@ public class BaseActor extends Actor {
     @Override
     public void executeActionModeFinished(ActionMode mode) {
 
+    }
+
+    @Override
+    public boolean executeTouchEvent(MotionEvent event) {
+        return false;
+    }
+
+    @Override
+    public boolean executeKeyDown(int keyCode, KeyEvent event) {
+        return false;
+    }
+
+    @Override
+    public boolean executeKeyUp(int keyCode, KeyEvent event) {
+        return false;
     }
 }

@@ -29,4 +29,9 @@ public class MVTDemoFirstActivity extends PolymorphicActivity {
             polymorphicActivity.setContentView(R.layout.activity_first);
         }
     }
+
+    @Override
+    public void dealBackBtnPressed() {
+        System.out.print("back");
+    }
 }
