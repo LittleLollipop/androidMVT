@@ -5,6 +5,7 @@ import android.view.MotionEvent;
 
 import com.sai.frame.footstone.view.Actor;
 import com.sai.frame.footstone.view.BaseActor;
+import com.sai.frame.footstone.view.PolymorphicActivity;
 
 /**
  * Created by sai on 2018/4/18.
@@ -19,11 +20,11 @@ public class BackActor extends BaseActor {
     }
 
     @Override
-    public boolean executeKeyUp(int keyCode, KeyEvent event) {
+    public boolean executeKeyUp(PolymorphicActivity activity, int keyCode, KeyEvent event) {
 
         if(event.getKeyCode() == KeyEvent.KEYCODE_BACK && (mKeyBackDown)){
             mKeyBackDown = false;
-
+            activity.dealBackBtnPressed();
             return true;
         }
 
