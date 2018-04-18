@@ -114,7 +114,7 @@ public abstract class Actor {
 
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (mActor != null){
-            boolean b = mActor.executeKeyDown(keyCode, event);
+            boolean b = mActor.onKeyDown(keyCode, event);
             if(b)
                 return b;
             else
@@ -125,7 +125,7 @@ public abstract class Actor {
 
     public boolean onKeyUp(PolymorphicActivity activity, int keyCode, KeyEvent event) {
         if (mActor != null){
-            boolean b = mActor.executeKeyUp(activity, keyCode, event);
+            boolean b = mActor.onKeyUp(activity, keyCode, event);
             if(b)
                 return b;
             else
