@@ -87,7 +87,8 @@ public class BaseActor extends Actor {
     }
 
     @Override
-    public boolean executeKeyUp(int keyCode, KeyEvent event) {
+    public boolean executeKeyUp(PolymorphicActivity activity, int keyCode, KeyEvent event) {
         return false;
     }
+    
 }
