@@ -65,7 +65,7 @@ public class MVTBusinessMachine extends StateMachine {
                 if(newState == BUSINESS_RUNNING)
                     return true;
             case STATE_BUSINESS_RUNNING:
-                if(newState == BUSINESS_CHANGING && businessNow.checkChange_InMachineThread(RUNNING_BACKGROUND,businessNow.getStateNow()))
+                if(newState == BUSINESS_CHANGING && (businessNow == null || businessNow.checkChange_InMachineThread(RUNNING_BACKGROUND,businessNow.getStateNow())))
                     return true;
             case STATE_BUSINESS_CHANGING:
                 if(newState == BUSINESS_RUNNING)
