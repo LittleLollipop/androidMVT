@@ -93,7 +93,9 @@ public class MVTBusinessMachine extends StateMachine {
         }
 
         if(state == BUSINESS_CHANGING){
-            businessNow.changeState(RUNNING_BACKGROUND);
+            if(businessNow != null)
+                businessNow.changeState(RUNNING_BACKGROUND);
+
             businessNow = newBusiness;
             newBusiness = null;
             businessNow.machine = this;
