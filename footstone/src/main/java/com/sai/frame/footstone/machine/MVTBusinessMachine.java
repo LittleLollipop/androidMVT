@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.sai.frame.footstone.machine.MVTBusinessMachine.MVTBaseBusiness.RUNNING_BACKGROUND;
+
 /**
  * Created by sai on 17/11/29.
  */
@@ -63,7 +65,7 @@ public class MVTBusinessMachine extends StateMachine {
                 if(newState == BUSINESS_RUNNING)
                     return true;
             case STATE_BUSINESS_RUNNING:
-                if(newState == BUSINESS_CHANGING)
+                if(newState == BUSINESS_CHANGING && businessNow.checkChange_InMachineThread(RUNNING_BACKGROUND,businessNow.getStateNow()))
                     return true;
             case STATE_BUSINESS_CHANGING:
                 if(newState == BUSINESS_RUNNING)
@@ -91,6 +93,7 @@ public class MVTBusinessMachine extends StateMachine {
         }
 
         if(state == BUSINESS_CHANGING){
+            businessNow.changeState(RUNNING_BACKGROUND);
             businessNow = newBusiness;
             newBusiness = null;
             businessNow.machine = this;
