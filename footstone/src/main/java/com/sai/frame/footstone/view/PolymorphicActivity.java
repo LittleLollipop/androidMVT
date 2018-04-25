@@ -112,7 +112,7 @@ public abstract class PolymorphicActivity extends Activity {
 
     public abstract Object getActorKey();
 
-    public void dealBackBtnPressed(){
-
+    public void onCommand(String commandBack) {
+        actor.onCommand(commandBack, this);
     }
 }

@@ -13,6 +13,8 @@ import com.sai.frame.footstone.view.PolymorphicActivity;
 
 public class BackActor extends BaseActor {
 
+    public static final String COMMAND_BACK = "COMMAND_BACK";
+
     boolean mKeyBackDown = false;
 
     public BackActor(Actor actor) {
@@ -24,7 +26,7 @@ public class BackActor extends BaseActor {
 
         if(event.getKeyCode() == KeyEvent.KEYCODE_BACK && (mKeyBackDown)){
             mKeyBackDown = false;
-            activity.dealBackBtnPressed();
+            activity.onCommand(COMMAND_BACK);
             return true;
         }
 
