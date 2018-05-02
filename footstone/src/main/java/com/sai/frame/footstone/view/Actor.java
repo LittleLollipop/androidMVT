@@ -1,5 +1,6 @@
 package com.sai.frame.footstone.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.ActionMode;
 import android.view.KeyEvent;
@@ -134,6 +135,13 @@ public abstract class Actor {
         return false;
     }
 
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(mActor != null)
+            mActor.onActivityResult(requestCode, resultCode, data);
+
+        executeActivityResult(requestCode, resultCode, data);
+    }
+
     public abstract void executeCreate(PolymorphicActivity polymorphicActivity);
 
     public abstract void executeStart(PolymorphicActivity polymorphicActivity);
@@ -163,4 +171,7 @@ public abstract class Actor {
     public abstract boolean executeKeyDown(int keyCode, KeyEvent event);
 
     public abstract boolean executeKeyUp(PolymorphicActivity activity, int keyCode, KeyEvent event);
+
+    public abstract void executeActivityResult(int requestCode, int resultCode, Intent data);
+
 }

@@ -1,6 +1,7 @@
 package com.sai.frame.footstone.view;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.ActionMode;
@@ -108,6 +109,12 @@ public abstract class PolymorphicActivity extends Activity {
             return true;
         else
             return super.onTouchEvent(event);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        actor.onActivityResult(requestCode, resultCode, data);
     }
 
     public abstract Object getActorKey();

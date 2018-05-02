@@ -1,6 +1,7 @@
 package com.sai.frame.footstone.view;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.ActionMode;
 import android.view.KeyEvent;
@@ -89,6 +90,11 @@ public class BaseActor extends Actor {
     @Override
     public boolean executeKeyUp(PolymorphicActivity activity, int keyCode, KeyEvent event) {
         return false;
+    }
+
+    @Override
+    public void executeActivityResult(int requestCode, int resultCode, Intent data) {
+
     }
 
 }
