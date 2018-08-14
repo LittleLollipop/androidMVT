@@ -3,6 +3,7 @@ package com.sai.frame.footstone.view;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.ActionMode;
 import android.view.KeyEvent;
@@ -115,6 +116,12 @@ public abstract class PolymorphicActivity extends Activity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         actor.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        actor.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
     public abstract Object getActorKey();

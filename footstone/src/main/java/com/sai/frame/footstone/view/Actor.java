@@ -142,6 +142,15 @@ public abstract class Actor {
         executeActivityResult(requestCode, resultCode, data);
     }
 
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults){
+        if(mActor != null)
+            mActor.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        executeRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+
+    public abstract void executeRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults);
+
     public abstract void executeCreate(PolymorphicActivity polymorphicActivity);
 
     public abstract void executeStart(PolymorphicActivity polymorphicActivity);
@@ -173,5 +182,6 @@ public abstract class Actor {
     public abstract boolean executeKeyUp(PolymorphicActivity activity, int keyCode, KeyEvent event);
 
     public abstract void executeActivityResult(int requestCode, int resultCode, Intent data);
+
 
 }

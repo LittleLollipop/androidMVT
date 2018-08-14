@@ -97,4 +97,8 @@ public class BaseActor extends Actor {
 
     }
 
+    @Override
+    public void executeRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+
+    }
 }
