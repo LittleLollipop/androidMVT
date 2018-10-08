@@ -124,6 +124,14 @@ public abstract class PolymorphicActivity extends Activity {
         actor.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        if(actor.onDispatchTouchEvent(ev))
+            return true;
+        else
+            return super.dispatchTouchEvent(ev);
+    }
+
     public abstract Object getActorKey();
 
     public void onCommand(String commandBack) {

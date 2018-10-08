@@ -102,6 +102,17 @@ public abstract class Actor {
         executeCommand(command, info);
     }
 
+    public boolean onDispatchTouchEvent(MotionEvent ev){
+        if (mActor != null){
+            boolean b = mActor.onDispatchTouchEvent(ev);
+            if(b)
+                return b;
+            else
+                return executeDispatchTouchEvent(ev);
+        }
+        return false;
+    }
+
     public boolean onTouchEvent(MotionEvent event){
         if (mActor != null){
             boolean b = mActor.onTouchEvent(event);
@@ -149,6 +160,8 @@ public abstract class Actor {
         executeRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
+
+
     public abstract void executeRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults);
 
     public abstract void executeCreate(PolymorphicActivity polymorphicActivity);
@@ -183,5 +196,6 @@ public abstract class Actor {
 
     public abstract void executeActivityResult(int requestCode, int resultCode, Intent data);
 
+    public abstract boolean executeDispatchTouchEvent(MotionEvent ev);
 
 }

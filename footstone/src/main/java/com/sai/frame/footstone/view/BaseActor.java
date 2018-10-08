@@ -98,6 +98,11 @@ public class BaseActor extends Actor {
     }
 
     @Override
+    public boolean executeDispatchTouchEvent(MotionEvent ev) {
+        return false;
+    }
+
+    @Override
     public void executeRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
 
     }
