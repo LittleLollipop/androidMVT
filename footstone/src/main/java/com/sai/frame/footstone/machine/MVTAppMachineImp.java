@@ -29,4 +29,8 @@ public class MVTAppMachineImp extends MVTAppMachine {
     public void registerActivityLifecycleCallbacks(MVTApplication mvtApplication) {
         mvtApplication.registerActivityLifecycleCallbacks(mPageMachine);
     }
+
+    public MVTPageMachine getPageMachine(){
+        return mPageMachine;
+    }
 }

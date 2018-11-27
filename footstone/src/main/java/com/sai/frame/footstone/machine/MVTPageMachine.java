@@ -28,6 +28,7 @@ public class MVTPageMachine extends StateMachine implements Application.Activity
 
     MVTAppMachine appMachine;
     ActorCenter actorCenter = new ActorCenter();
+    Activity lastResumed;
 
     MVTPageMachine(MVTAppMachine appMachine){
         this.appMachine = appMachine;
@@ -72,6 +73,7 @@ public class MVTPageMachine extends StateMachine implements Application.Activity
 
     @Override
     public void onActivityResumed(Activity activity) {
+        lastResumed = activity;
         if(appMachine.getStateNow() == PREPARE_START && appMachine.starter.isPrepareActivity(activity)){
             appMachine.changeState(STARTING);
         }
@@ -79,7 +81,8 @@ public class MVTPageMachine extends StateMachine implements Application.Activity
 
     @Override
     public void onActivityPaused(Activity activity) {
-
+        if(lastResumed == activity)
+            lastResumed = null;
     }
 
     @Override
@@ -95,5 +98,9 @@ public class MVTPageMachine extends StateMachine implements Application.Activity
     @Override
     public void onActivityDestroyed(Activity activity) {
         activities.remove(activity);
+    }
+
+    public Activity getLastResumed(){
+        return lastResumed;
     }
 }
