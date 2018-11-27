@@ -9,6 +9,6 @@
 		}
 	}
   
-  dependencies {
+  	dependencies {
 	        implementation 'com.github.LittleLollipop:androidMVT:0.0.17'
 	}
