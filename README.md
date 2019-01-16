@@ -20,11 +20,11 @@ Machine View Tools，此库试图解决高复杂度的业务逻辑在长期迭�
 
 ## 这些部分的设计可能也需要了解
 	
-UI部分的设计
+[UI部分的设计](https://github.com/LittleLollipop/androidMVT/blob/master/Design/UI.md)
 
 ## 这里有些工具，被设计用来表达纯粹的逻辑
 
-State Machine
+[State Machine](https://github.com/LittleLollipop/androidMVT/blob/master/Design/StateMachine.md)
 
 Mission
 
