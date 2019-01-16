@@ -1,11 +1,0 @@
-
-_squid:S1155">Use isEmpty() to check whether the collection is empty or not.(œé† ıÿÿÿÿ8ì”ïˆ,
-osquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(ìœÄÓ8ì”ïˆ,
-Ysquid:S1213"8Move this variable to comply with Java Code Conventions.(ö‡ÉŸúÿÿÿÿ8ì”ïˆ,
-gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(€ğá—8ì”ïˆ,
-`squid:S2583"DChange this condition so that it does not always evaluate to "false"(¨ÄıÍ8ì”ïˆ,
-_squid:S1155">Use isEmpty() to check whether the collection is empty or not.(Í Û¨üÿÿÿÿ8ì”ïˆ,
-wsquid:S1149"VReplace the synchronized class "Hashtable" by an unsynchronized one such as "HashMap".(ÎÜ¥ˆûÿÿÿÿ8ì”ïˆ,
-Wsquid:S1213";Move this constructor to comply with Java Code Conventions.(¶‘Ú8ì”ïˆ,
-lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ê˜û÷ÿÿÿÿÿ8ì”ïˆ,
-Usquid:S3400"9Remove this method and declare a constant for this value.(”·³›8ì”ïˆ,
