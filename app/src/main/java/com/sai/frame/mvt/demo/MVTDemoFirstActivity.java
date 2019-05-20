@@ -1,6 +1,9 @@
 package com.sai.frame.mvt.demo;
 
+import android.app.Activity;
+
 import com.sai.frame.footstone.view.Actor;
+import com.sai.frame.footstone.view.ActorInterface;
 import com.sai.frame.footstone.view.BaseActor;
 import com.sai.frame.footstone.view.PolymorphicActivity;
 import com.sai.frame.mvt.R;
@@ -25,12 +28,12 @@ public class MVTDemoFirstActivity extends PolymorphicActivity {
         }
 
         @Override
-        public void executeCreate(PolymorphicActivity polymorphicActivity) {
+        public void executeCreate(Activity polymorphicActivity, ActorInterface actorInterface) {
             polymorphicActivity.setContentView(R.layout.activity_first);
         }
     }
 
-    @Override
+
     public void dealBackBtnPressed() {
         System.out.print("back");
     }

@@ -1,5 +1,6 @@
 package com.sai.frame.footstone.view;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.ActionMode;
@@ -18,67 +19,67 @@ public abstract class Actor {
         mActor = actor;
     }
 
-    public void onCreate(PolymorphicActivity polymorphicActivity){
+    public void onCreate(ActorInterface polymorphicActivity){
         if(mActor != null)
             mActor.onCreate(polymorphicActivity);
 
-        executeCreate(polymorphicActivity);
+        executeCreate(polymorphicActivity.getContext(), polymorphicActivity);
     }
 
-    public void onStart(PolymorphicActivity polymorphicActivity){
+    public void onStart(ActorInterface polymorphicActivity){
         if(mActor != null)
             mActor.onStart(polymorphicActivity);
 
-        executeStart(polymorphicActivity);
+        executeStart(polymorphicActivity.getContext(), polymorphicActivity);
     }
 
-    public void onRestart(PolymorphicActivity polymorphicActivity){
+    public void onRestart(ActorInterface polymorphicActivity){
         if(mActor != null)
             mActor.onRestart(polymorphicActivity);
 
-        executeRestart(polymorphicActivity);
+        executeRestart(polymorphicActivity.getContext(), polymorphicActivity);
     }
 
-    public void onResume(PolymorphicActivity polymorphicActivity){
+    public void onResume(ActorInterface polymorphicActivity){
         if(mActor != null)
             mActor.onResume(polymorphicActivity);
 
-        executeResume(polymorphicActivity);
+        executeResume(polymorphicActivity.getContext(), polymorphicActivity);
     }
 
-    public void onPause(PolymorphicActivity polymorphicActivity){
+    public void onPause(ActorInterface polymorphicActivity){
         if(mActor != null)
             mActor.onPause(polymorphicActivity);
 
-        executePause(polymorphicActivity);
+        executePause(polymorphicActivity.getContext(), polymorphicActivity);
     }
 
-    public void onStop(PolymorphicActivity polymorphicActivity){
+    public void onStop(ActorInterface polymorphicActivity){
         if(mActor != null)
             mActor.onStop(polymorphicActivity);
 
-        executeStop(polymorphicActivity);
+        executeStop(polymorphicActivity.getContext(), polymorphicActivity);
     }
 
-    public void onDestroy(PolymorphicActivity polymorphicActivity){
+    public void onDestroy(ActorInterface polymorphicActivity){
         if(mActor != null)
             mActor.onDestroy(polymorphicActivity);
 
-        executeDestroy(polymorphicActivity);
+        executeDestroy(polymorphicActivity.getContext(), polymorphicActivity);
     }
 
-    public void onSaveInstanceState(PolymorphicActivity polymorphicActivity, Bundle outState){
+    public void onSaveInstanceState(ActorInterface polymorphicActivity, Bundle outState){
         if(mActor != null)
             mActor.onSaveInstanceState(polymorphicActivity, outState);
 
-        executeSaveInstanceState(polymorphicActivity, outState);
+        executeSaveInstanceState(polymorphicActivity.getContext(), outState, polymorphicActivity);
     }
 
-    public void onRestoreInstanceState(PolymorphicActivity polymorphicActivity, Bundle savedInstanceState){
+    public void onRestoreInstanceState(ActorInterface polymorphicActivity, Bundle savedInstanceState){
         if(mActor != null)
             mActor.onRestoreInstanceState(polymorphicActivity, savedInstanceState);
 
-        executeRestoreInstanceState(polymorphicActivity, savedInstanceState);
+        executeRestoreInstanceState(polymorphicActivity.getContext(), savedInstanceState, polymorphicActivity);
     }
 
     public void onActionModeStarted(ActionMode mode) {
@@ -135,13 +136,13 @@ public abstract class Actor {
         return false;
     }
 
-    public boolean onKeyUp(PolymorphicActivity activity, int keyCode, KeyEvent event) {
+    public boolean onKeyUp(ActorInterface activity, int keyCode, KeyEvent event) {
         if (mActor != null){
             boolean b = mActor.onKeyUp(activity, keyCode, event);
             if(b)
                 return b;
             else
-                return executeKeyUp(activity, keyCode, event);
+                return executeKeyUp(activity.getContext(), activity, keyCode, event);
         }
         return false;
     }
@@ -164,23 +165,23 @@ public abstract class Actor {
 
     public abstract void executeRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults);
 
-    public abstract void executeCreate(PolymorphicActivity polymorphicActivity);
+    public abstract void executeCreate(Activity polymorphicActivity, ActorInterface actorInterface);
 
-    public abstract void executeStart(PolymorphicActivity polymorphicActivity);
+    public abstract void executeStart(Activity polymorphicActivity, ActorInterface actorInterface);
 
-    public abstract void executeRestart(PolymorphicActivity polymorphicActivity);
+    public abstract void executeRestart(Activity polymorphicActivity, ActorInterface actorInterface);
 
-    public abstract void executeResume(PolymorphicActivity polymorphicActivity);
+    public abstract void executeResume(Activity polymorphicActivity, ActorInterface actorInterface);
 
-    public abstract void executePause(PolymorphicActivity polymorphicActivity);
+    public abstract void executePause(Activity polymorphicActivity, ActorInterface actorInterface);
 
-    public abstract void executeStop(PolymorphicActivity polymorphicActivity);
+    public abstract void executeStop(Activity polymorphicActivity, ActorInterface actorInterface);
 
-    public abstract void executeDestroy(PolymorphicActivity polymorphicActivity);
+    public abstract void executeDestroy(Activity polymorphicActivity, ActorInterface actorInterface);
 
-    public abstract void executeSaveInstanceState(PolymorphicActivity polymorphicActivity, Bundle outState);
+    public abstract void executeSaveInstanceState(Activity polymorphicActivity, Bundle outState, ActorInterface actorInterface);
 
-    public abstract void executeRestoreInstanceState(PolymorphicActivity polymorphicActivity, Bundle savedInstanceState);
+    public abstract void executeRestoreInstanceState(Activity polymorphicActivity, Bundle savedInstanceState, ActorInterface actorInterface);
 
     public abstract void executeCommand(String command, Object info);
 
@@ -192,7 +193,7 @@ public abstract class Actor {
 
     public abstract boolean executeKeyDown(int keyCode, KeyEvent event);
 
-    public abstract boolean executeKeyUp(PolymorphicActivity activity, int keyCode, KeyEvent event);
+    public abstract boolean executeKeyUp(Activity activity, ActorInterface actorInterface, int keyCode, KeyEvent event);
 
     public abstract void executeActivityResult(int requestCode, int resultCode, Intent data);
 

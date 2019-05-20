@@ -1,8 +1,10 @@
 package com.sai.frame.footstone.view.Actors;
 
+import android.app.Activity;
 import android.view.ActionMode;
 
 import com.sai.frame.footstone.view.Actor;
+import com.sai.frame.footstone.view.ActorInterface;
 import com.sai.frame.footstone.view.BaseActor;
 import com.sai.frame.footstone.view.PolymorphicActivity;
 
@@ -19,7 +21,7 @@ public class FixActionModeActor extends BaseActor {
     }
 
     @Override
-    public void executePause(PolymorphicActivity polymorphicActivity) {
+    public void executePause(Activity polymorphicActivity, ActorInterface actorInterface) {
         endActionMode();
     }
 

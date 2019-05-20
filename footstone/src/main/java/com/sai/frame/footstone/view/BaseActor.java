@@ -1,6 +1,7 @@
 package com.sai.frame.footstone.view;
 
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.ActionMode;
@@ -18,47 +19,52 @@ public class BaseActor extends Actor {
     }
 
     @Override
-    public void executeCreate(PolymorphicActivity polymorphicActivity) {
+    public void executeRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
 
     }
 
     @Override
-    public void executeStart(PolymorphicActivity polymorphicActivity) {
+    public void executeCreate(Activity polymorphicActivity, ActorInterface actorInterface) {
 
     }
 
     @Override
-    public void executeRestart(PolymorphicActivity polymorphicActivity) {
+    public void executeStart(Activity polymorphicActivity, ActorInterface actorInterface) {
 
     }
 
     @Override
-    public void executeResume(PolymorphicActivity polymorphicActivity) {
+    public void executeRestart(Activity polymorphicActivity, ActorInterface actorInterface) {
 
     }
 
     @Override
-    public void executePause(PolymorphicActivity polymorphicActivity) {
+    public void executeResume(Activity polymorphicActivity, ActorInterface actorInterface) {
 
     }
 
     @Override
-    public void executeStop(PolymorphicActivity polymorphicActivity) {
+    public void executePause(Activity polymorphicActivity, ActorInterface actorInterface) {
 
     }
 
     @Override
-    public void executeDestroy(PolymorphicActivity polymorphicActivity) {
+    public void executeStop(Activity polymorphicActivity, ActorInterface actorInterface) {
 
     }
 
     @Override
-    public void executeSaveInstanceState(PolymorphicActivity polymorphicActivity, Bundle outState) {
+    public void executeDestroy(Activity polymorphicActivity, ActorInterface actorInterface) {
 
     }
 
     @Override
-    public void executeRestoreInstanceState(PolymorphicActivity polymorphicActivity, Bundle savedInstanceState) {
+    public void executeSaveInstanceState(Activity polymorphicActivity, Bundle outState, ActorInterface actorInterface) {
+
+    }
+
+    @Override
+    public void executeRestoreInstanceState(Activity polymorphicActivity, Bundle savedInstanceState, ActorInterface actorInterface) {
 
     }
 
@@ -88,7 +94,7 @@ public class BaseActor extends Actor {
     }
 
     @Override
-    public boolean executeKeyUp(PolymorphicActivity activity, int keyCode, KeyEvent event) {
+    public boolean executeKeyUp(Activity activity, ActorInterface actorInterface, int keyCode, KeyEvent event) {
         return false;
     }
 
@@ -102,8 +108,5 @@ public class BaseActor extends Actor {
         return false;
     }
 
-    @Override
-    public void executeRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
 
-    }
 }

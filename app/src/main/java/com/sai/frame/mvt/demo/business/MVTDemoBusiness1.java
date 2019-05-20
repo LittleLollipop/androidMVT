@@ -1,10 +1,12 @@
 package com.sai.frame.mvt.demo.business;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Handler;
 
 import com.sai.frame.footstone.machine.MVTBusinessMachine;
 import com.sai.frame.footstone.view.Actor;
+import com.sai.frame.footstone.view.ActorInterface;
 import com.sai.frame.footstone.view.BaseActor;
 import com.sai.frame.footstone.view.PolymorphicActivity;
 import com.sai.frame.mvt.R;
@@ -59,14 +61,12 @@ public class MVTDemoBusiness1 extends MVTBusinessMachine.MVTBaseBusiness {
         }
 
         @Override
-        public void onCreate(PolymorphicActivity polymorphicActivity) {
-            super.onCreate(polymorphicActivity);
+        public void executeCreate(Activity polymorphicActivity, ActorInterface actorInterface) {
             polymorphicActivity.setContentView(R.layout.activity_business1);
         }
 
         @Override
-        public void onResume(PolymorphicActivity polymorphicActivity) {
-            super.onResume(polymorphicActivity);
+        public void executeResume(Activity polymorphicActivity, ActorInterface actorInterface) {
             startOver();
         }
     }

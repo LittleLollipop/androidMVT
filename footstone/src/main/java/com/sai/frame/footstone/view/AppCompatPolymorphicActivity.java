@@ -5,18 +5,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.view.ActionMode;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 
 import com.sai.frame.footstone.MVTApplication;
 
-/**
- * Created by sai on 17/12/1.
- */
-
-public abstract class PolymorphicActivity extends Activity implements ActorInterface{
-
+public abstract class AppCompatPolymorphicActivity extends AppCompatActivity implements ActorInterface{
     Actor actor;
 
     @Override

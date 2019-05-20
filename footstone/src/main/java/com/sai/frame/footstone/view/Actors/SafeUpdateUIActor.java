@@ -1,10 +1,12 @@
 package com.sai.frame.footstone.view.Actors;
 
+import android.app.Activity;
 import android.os.Looper;
 
 import com.sai.frame.footstone.base.ManifoldValve;
 import com.sai.frame.footstone.base.RunnablePocket;
 import com.sai.frame.footstone.view.Actor;
+import com.sai.frame.footstone.view.ActorInterface;
 import com.sai.frame.footstone.view.BaseActor;
 import com.sai.frame.footstone.view.PolymorphicActivity;
 
@@ -23,17 +25,17 @@ public class SafeUpdateUIActor extends BaseActor {
     }
 
     @Override
-    public void executeCreate(PolymorphicActivity polymorphicActivity) {
+    public void executeCreate(Activity polymorphicActivity, ActorInterface actorInterface) {
         createManifoldValve();
     }
 
     @Override
-    public void executeResume(PolymorphicActivity polymorphicActivity) {
+    public void executeResume(Activity polymorphicActivity, ActorInterface actorInterface) {
         safeUpdateUIManifoldValve.openValveOnce(1);
     }
 
     @Override
-    public void executePause(PolymorphicActivity polymorphicActivity) {
+    public void executePause(Activity polymorphicActivity, ActorInterface actorInterface) {
         createManifoldValve();
     }
 

@@ -1,9 +1,11 @@
 package com.sai.frame.footstone.view.Actors;
 
+import android.app.Activity;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 
 import com.sai.frame.footstone.view.Actor;
+import com.sai.frame.footstone.view.ActorInterface;
 import com.sai.frame.footstone.view.BaseActor;
 import com.sai.frame.footstone.view.PolymorphicActivity;
 
@@ -22,11 +24,11 @@ public class BackActor extends BaseActor {
     }
 
     @Override
-    public boolean executeKeyUp(PolymorphicActivity activity, int keyCode, KeyEvent event) {
+    public boolean executeKeyUp(Activity activity, ActorInterface actorInterface, int keyCode, KeyEvent event) {
 
         if(event.getKeyCode() == KeyEvent.KEYCODE_BACK && (mKeyBackDown)){
             mKeyBackDown = false;
-            activity.onCommand(COMMAND_BACK);
+            actorInterface.onCommand(COMMAND_BACK);
             return true;
         }
 
