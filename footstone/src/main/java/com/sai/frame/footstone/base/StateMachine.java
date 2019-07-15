@@ -251,7 +251,7 @@ public abstract class StateMachine {
 
     }
 
-    private static class HandlerThreadHolder{
+    public static class HandlerThreadHolder{
 
         private static final String TAG = HandlerThreadHolder.class.getName();
         HandlerThread mThread;
