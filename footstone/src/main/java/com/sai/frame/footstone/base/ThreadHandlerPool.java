@@ -12,6 +12,10 @@ public class ThreadHandlerPool implements Application.ActivityLifecycleCallbacks
 
     static int numFlag = 1;
 
+    static int THREAD_POOL_SIZE_SET = 10;
+
+    private static int THREAD_POOL_SIZE = THREAD_POOL_SIZE_SET;
+
     public static StateMachine.HandlerThreadHolder createHandlerThread(String threadName){
 
         StateMachine.HandlerThreadHolder threadHolder = threads.get(threadName);
@@ -32,7 +36,10 @@ public class ThreadHandlerPool implements Application.ActivityLifecycleCallbacks
     }
 
     private static void createThreads(){
-        for (int i = 0; i < 10; i++){
+
+        THREAD_POOL_SIZE = THREAD_POOL_SIZE_SET;
+
+        for (int i = 0; i < THREAD_POOL_SIZE; i++){
             createHandlerThread("ThreadHandlerPool_T" + i);
         }
     }
@@ -41,6 +48,9 @@ public class ThreadHandlerPool implements Application.ActivityLifecycleCallbacks
 
         int num = numFlag++;
 
+        if (num >= THREAD_POOL_SIZE)
+            num = 0;
+
         threads.get("ThreadHandlerPool_T" + num).handlers.get(0).post(r);
     }
 
@@ -48,6 +58,9 @@ public class ThreadHandlerPool implements Application.ActivityLifecycleCallbacks
 
         int num = numFlag++;
 
+        if (num >= THREAD_POOL_SIZE)
+            num = 0;
+        
         threads.get("ThreadHandlerPool_T" + num).handlers.get(0).postDelayed(r, delayMillis);
     }
 
